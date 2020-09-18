@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block navbar %}
+    {% include 'includes/_navbar.html' %}
+{% endblock navbar %}
+    
+{% block main %}
+<div class="uk-child-width-1-4@s uk-text-center uk-grid-small" uk-grid>
+    {% for obj in products  %}
+    <div>
+        <div class="uk-card uk-card-default  ">
+            <div class="uk-card-media-top">
+                <img src="{{obj.product_image.url}}" style="width: 10em; height: 10em;" alt="">
+            </div>
+            <div class="uk-card-body uk-card-small uk-card-hover">
+                <h3 class="uk-card-title">{{obj.product_name}}</h3>
+                <p>Quantity: {{obj.product_quantity}}</p>
+                <button class="uk-button uk-button-primary">Details</button>
+            </div>
+        </div> 
+    </div>
+    {% endfor %}
+</div>
+{% endblock main %}
+    

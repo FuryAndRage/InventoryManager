@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('InventoryManager.core.urls')),
+    path('', include('InventoryManager.product.urls')),
     path('admin/', admin.site.urls),
 ]
 

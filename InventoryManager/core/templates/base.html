@@ -7,74 +7,14 @@
 <meta name="Description" content="Enter your description here"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
-
-<title>Simple Inventory Manager</title>
+{% block css %}{% endblock css %}
+<title>Simple Inventory Manager|{% block title %}{% endblock title %}</title>
 </head>
 <body>
-    <nav class="uk-navbar-container uk-margin" uk-navbar>
-        <div class="nav-overlay uk-navbar-left">
-            <a class="uk-navbar-item uk-logo" href="#">SIM</a>
-            <ul class="uk-navbar-nav">
-                <li class="uk-active"><a href="#">Active</a></li>
-                <li><a href="#">Item</a></li>
-            </ul>
-        </div>
-        <div class="nav-overlay uk-navbar-right">
-            <a class="uk-navbar-toggle" uk-search-icon uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
-        </div>
-        <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
-            <div class="uk-navbar-item uk-width-expand">
-                <form class="uk-search uk-search-navbar uk-width-1-1">
-                    <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
-                </form>
-            </div>
-            <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
-        </div>
-    </nav>
-
-
-<div class="uk-container">
-    <div class="uk-child-width-1-4@s uk-text-center uk-grid-small" uk-grid>
-        <div>
-            <div class="uk-card uk-card-default ">
-                <div class="uk-card-media-top">
-                    <img src="https://source.unsplash.com/RZ7YXW8-fdw/800x600" alt="">
-                </div>
-                <div class="uk-card-body uk-card-small">
-                    <h3 class="uk-card-title">Media Top</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                </div>
-            </div> 
-        </div>
-        <div>
-            <div class="uk-card uk-card-default ">
-                <div class="uk-card-media-top">
-                    <img src="https://source.unsplash.com/RZ7YXW8-fdw/800x600" alt="">
-                </div>
-                <div class="uk-card-body uk-card-small">
-                    <h3 class="uk-card-title">Media Top</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="uk-card uk-card-default ">
-                <div class="uk-card-media-top">
-                    <img src="https://source.unsplash.com/RZ7YXW8-fdw/800x600" alt="">
-                </div>
-                <div class="uk-card-body uk-card-small">
-                    <h3 class="uk-card-title">Media Top</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                </div>
-            </div>
-        </div> 
-    </div>
-
-    
-</div> 
-
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+    {% block navbar %} {% endblock navbar %}
+    <div class="uk-container">{% block main %}{% endblock main %}</div> 
+    {% block js %}{% endblock js %}   
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
 </body>
 </html>
