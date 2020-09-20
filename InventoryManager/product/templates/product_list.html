@@ -16,11 +16,16 @@
             <div class="uk-card-body uk-card-small uk-card-hover">
                 <h3 class="uk-card-title">{{obj.product_name}}</h3>
                 <p>Quantity: {{obj.product_quantity}}</p>
-                <button class="uk-button uk-button-primary">Details</button>
+                <a href=""><button  class="uk-button uk-button-primary">Details</button></a>
             </div>
         </div> 
+       
     </div>
+   
     {% endfor %}
 </div>
-{% endblock main %}
+
+
     
+{% include 'productAddModal.html' %}
+{% endblock main %}

@@ -1,6 +1,127 @@
 <nav class="uk-navbar-container uk-margin" uk-navbar>
     <div class="nav-overlay uk-navbar-left">
         <a class="uk-navbar-item uk-logo" href="#">SIM</a>
+        
+    </div>
+    <div class="nav-overlay uk-navbar-right">
+        <ul class="uk-navbar-nav nav-overlay uk-visible@s">
+            <li >
+                <a href="#">Actions</a>
+                <div class="uk-navbar-dropdown ">
+                    <ul class="uk-nav uk-navbar-dropdown-nav ">
+                        
+                        <li><a href="#" uk-toggle="target: #productAddModal">Add New Product</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">Logs</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        
+                        <li><a href="#">Withdrawals</a></li>
+                        <li><a href="#">Entries Log</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <a class="uk-navbar-toggle" uk-search-icon uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+    </div>
+    
+    <a href="#" class="uk-navbar-toggle uk-hidden@s" uk-navbar-toggle-icon uk-toggle="target: #sidenav"></a>
+   
+
+    
+    <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+        <div class="uk-navbar-item uk-width-expand">
+            <form class="uk-search uk-search-navbar uk-width-1-1">
+                <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
+            </form>
+        </div>
+        <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+    </div>
+</nav>
+
+<div id="sidenav" uk-offcanvas="flip: true" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <div>
+            <div class="uk-width-1-1">
+              <ul class="uk-nav-parent-icon uk-nav-primary" uk-nav>
+                <li class="uk-parent uk-active">
+                  <a href="#">Actions</a>
+                  <ul class="uk-nav-sub">
+                    <li class="uk-active"><a href="#">Original Crust</a></li>
+                    <li><a href="#">Thin Crust</a></li>
+                   
+                  </ul>
+                </li>
+              </ul>
+              <ul class="uk-nav-parent-icon uk-nav-primary" uk-nav>
+                <li class="uk-parent uk-active">
+                  <a href="#">Logs</a>
+                  <ul class="uk-nav-sub">
+                    <li><a href="#">Withdrawals</a></li>
+                    <li><a href="#">Entries</a></li>
+                
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+    </div>
+</div>
+
+<!-- <header> -->
+    <!-- Main Navbar -->
+    <!-- <nav class="uk-container uk-navbar">
+        <div class="nav-overlay uk-navbar-left">
+            <a class="uk-navbar-item uk-logo" href="#">SIM</a>
+        </div>
+        <div class="nav-overlay uk-navbar-right">
+            <ul class="uk-navbar-nav uk-visible@s">
+                <li >
+                    <a href="#">Actions</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a href="#">Add New Product</a></li>
+                            <li><a href="#">Item</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Logs</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a href="#">Withdrawals</a></li>
+                            <li><a href="#">Entries Log</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <a href="#" class="uk-navbar-toggle uk-hidden@s" uk-navbar-toggle-icon uk-toggle="target: #sidenav"></a>
+        </div>
+
+        <div class="nav-overlay uk-navbar-right">
+            <a class="uk-navbar-toggle" uk-search-icon uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+        </div>
+        <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+            <div class="uk-navbar-item uk-width-expand">
+                <form class="uk-search uk-search-navbar uk-width-1-1">
+                    <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
+                </form>
+            </div>
+            <a class="uk-navbar-toggle uk-navbar-right" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+        </div>
+    </nav>
+    <nav class="uk-container uk-navbar">
+        
+    </nav>
+    
+</header>
+
+<div id="sidenav" uk-offcanvas="flip: true" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
         <ul class="uk-navbar-nav">
             <li >
                 <a href="#">Actions</a>
@@ -23,20 +144,5 @@
                 </div>
             </li>
         </ul>
-    </div>
-
-
-   
-
-    <div class="nav-overlay uk-navbar-right">
-        <a class="uk-navbar-toggle" uk-search-icon uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
-    </div>
-    <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
-        <div class="uk-navbar-item uk-width-expand">
-            <form class="uk-search uk-search-navbar uk-width-1-1">
-                <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
-            </form>
-        </div>
-        <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
-    </div>
-</nav>
+    </div> 
+</div> -->

@@ -1,0 +1,42 @@
+<div id="productAddModal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title"></h2>
+        <form method="post" enctype="multipart/form-data" action=" {% url 'product:add' %} " >
+            {% csrf_token %}
+            <fieldset class="uk-fieldset">
+
+                <legend class="uk-legend"> <b>Product</b><span style="font-weight: 300; color: rgb(120, 122, 124);"> Form</span> </legend>
+        
+                <div class="uk-margin">
+                    <input class="uk-input" id="id_product_name" name="product_name" type="text" placeholder="Product Name">
+                </div>
+        
+                <div class="uk-margin">
+                    <select class="uk-select">
+                        <option>Category</option>
+                        {% for obj in category  %}
+                        <option value="{{obj.id}}">{{obj}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="uk-margin">
+                    <textarea id="id_product_description" name="product_description" class="uk-textarea" rows="5" placeholder="Product Description"></textarea>
+                </div>
+                <div class="uk-margin">
+                    <input class="uk-input" id="id_product_quantity" name="product_quantity" type="number" placeholder="Product Quantity">
+                </div>
+                <div class="uk-margin">
+                    <div uk-form-custom>
+                        <input type="file" name="product_image" id="id_product_image">
+                        <button class="uk-button uk-button-default" type="button" tabindex="-1">Select Image</button>
+                    </div>
+                </div>
+        
+            </fieldset>
+            <input type="text" id="id_user" name="user" hidden value="{{request.user.id}}">
+            <button class = "uk-button uk-button-primary" type="submit">Save</button>
+        </form>
+        
+    </div>
+</div>
