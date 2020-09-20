@@ -1,4 +1,5 @@
 from django.shortcuts import render,get_object_or_404, redirect
+from django.db.models import Q
 from .models import Product
 from .forms import ProductForm
 from InventoryManager.category.models import Category
@@ -29,5 +30,15 @@ def product_add(request):
             return redirect('product:list')
     return render(request, 'productAddModal.html', {'form':form,})
 
-    # if request.method != 'POST':
-    #     return render(request, '')
+def product_detail(request, pk):
+    product = get_object_or_404(Product, pk = pk)
+    return render(request, 'product_detail.html', {'product':product})
+
+
+def product_search(request):
+    category = Category.objects.filter(user = request.user.id)
+    products = Product.objects.filter(user = request.user.id)
+    if request.method == 'GET':
+        search = request.GET.get('search')
+        products = products.filter(product_name__icontains = search)
+    return render(request, 'product_list.html', {'products':products, 'category':category})

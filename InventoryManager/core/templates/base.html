@@ -8,13 +8,54 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 {% block css %}{% endblock css %}
+<style>
+    #loading {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(192, 192, 192, 0.5);
+  background-image: url("https://onlinelibrary.wiley.com/ux3/widgets/publication-content/images/spinner.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20em;
+}
+
+
+
+</style>
 <title>Simple Inventory Manager|{% block title %}{% endblock title %}</title>
 </head>
 <body>
+    
+    
     {% block navbar %} {% endblock navbar %}
     <div class="uk-container">{% block main %}{% endblock main %}</div> 
-    {% block js %}{% endblock js %}   
+    {% block js %}{% endblock js %}
+    <script>
+        function onReady(callback) {
+        var intervalId = window.setInterval(function() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+        window.clearInterval(intervalId);
+        callback.call(this);
+        }
+    }, 500);
+    }
+
+    function setVisible(selector, visible) {
+    document.querySelector(selector).style.display = visible ? 'block' : 'none';
+    }
+
+    onReady(function() {
+    setVisible('body', true);
+    setVisible('#loading', false);
+    });
+    </script>  
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+    <div id="loading"></div>
 </body>
 </html>
