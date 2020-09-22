@@ -3,7 +3,7 @@ from django.db.models import Q
 from .models import Product
 from .forms import ProductForm
 from InventoryManager.category.models import Category
-
+from django.http import Http404
 
 
 
@@ -31,8 +31,9 @@ def product_add(request):
     return render(request, 'productAddModal.html', {'form':form,})
 
 def product_detail(request, pk):
+    category = Category.objects.filter(user = request.user.id)
     product = get_object_or_404(Product, pk = pk)
-    return render(request, 'product_detail.html', {'product':product})
+    return render(request, 'product_detail.html', {'product':product, 'category':category})
 
 
 def product_search(request):
@@ -42,3 +43,14 @@ def product_search(request):
         search = request.GET.get('search')
         products = products.filter(product_name__icontains = search)
     return render(request, 'product_list.html', {'products':products, 'category':category})
+
+
+def product_delete(request, pk):
+    product = get_object_or_404(Product, pk = pk)
+    if product.user != request.user:
+        raise Http404
+    # form = ProductForm(request.POST or None, request.FILES or None, instance = product)
+    if request.method == 'POST':
+        product.delete()
+        return redirect('product:list')
+    return render(request, 'productDeleteModal.html', {'product':product})

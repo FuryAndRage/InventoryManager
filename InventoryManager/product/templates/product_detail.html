@@ -11,5 +11,12 @@
     <div class="uk-child-width-1-1@s uk-text-center uk-grid-small" uk-grid>
         {{product}}
     </div>
+    <div class="uk-child-width-1-1@s uk-text-center uk-grid-small" uk-grid>
+        <p>To delete this product <a href="#" uk-toggle="target: #productDeleteModal">Click Here</a></p>
+        <p>To withdrawal this product <a href="#" uk-toggle="target: #withdrawalProductModal">Click Here</a></p>
+    </div>
+{% include 'withdrawalProductModal.html' %}
+{% include 'productDeleteModal.html' %}
+{% include 'productAddModal.html' %}
 {% endblock main %}
     
