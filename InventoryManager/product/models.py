@@ -8,7 +8,7 @@ class Product(models.Model):
     product_name = models.CharField('Product', max_length = 255)
     product_description = models.TextField(null = True)
     product_quantity = models.IntegerField(default = 0)
-    product_image = models.ImageField(upload_to = 'product/')
-
+    product_image = models.ImageField(upload_to = 'product/', null=True)
+    
     def __str__(self):
         return self.product_name

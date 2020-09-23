@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+    {% include 'includes/_navbar.html' %}
+{% endblock navbar %}
+
+
+
+{% block main %}
+    
+    <div class="uk-child-width-1-1@s uk-text-center uk-grid-small" uk-grid>
+        
+        <table class="uk-table uk-table-responsive uk-table-divider">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>User</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for obj in withdrawals %}
+                <tr>
+                    <td>{{obj.withdrawal_time}}</td>
+                    <td>{{obj.product}}</td>
+                    <td>{{obj.withdrawal_quantity}}</td>
+                    <td>{{obj.user}}</td>
+                    <td>{{obj.withdrawal_reason}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            
+    </div>
+
+{% include 'productAddModal.html' %}
+{% endblock main %}
+    

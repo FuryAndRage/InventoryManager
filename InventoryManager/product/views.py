@@ -23,7 +23,8 @@ def product_add(request):
                 product_name = form.cleaned_data['product_name'],
                 product_description = form.cleaned_data['product_description'],
                 product_quantity = form.cleaned_data['product_quantity'],
-                product_image = form.cleaned_data['product_image']
+                product_image = form.cleaned_data['product_image'],
+              
             )
             data_from_form.save()
             # Insert success Message here

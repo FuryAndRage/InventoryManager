@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('InventoryManager.product.urls')),
+    path('withdrawals/', include('InventoryManager.withdrawal.urls')),
     path('admin/', admin.site.urls),
 ]
 

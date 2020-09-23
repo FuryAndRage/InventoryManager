@@ -4,9 +4,17 @@
         <form method="post" enctype="multipart/form-data" action=" {% url 'product:withdrawal' product.id %}  " >
             {% csrf_token %}
             <fieldset class="uk-fieldset">
-
+                <legend class="uk-legend"> <b>Withdrawal</b><span style="font-weight: 300; color: rgb(120, 122, 124);"> Form</span> </legend>
+                <h4>{{product.product_name}}</h4>
+                <div class="uk-margin">
+                    <input class="uk-input" id="id_withdrawal_quantity" name="withdrawal_quantity" type="number" placeholder="Withdrawal Quantity">
+                </div>
+                <div class="uk-margin">
+                    <input class="uk-input" id="id_withdrawal_reason" name="withdrawal_reason" type="text" placeholder="Withdrawal Reason">
+                </div>
             </fieldset>
             <input type="text" id="id_user" name="user" hidden value="{{request.user.id}}">
+            <input  id="id_product" name="product" type="text" hidden value="{{product.id}}">
             <button class = "uk-button uk-button-primary" type="submit">Save</button>
         </form>
         
